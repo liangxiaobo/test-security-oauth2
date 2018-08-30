@@ -2,6 +2,17 @@ spring:
   application:
     name: service-auth
 
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://172.16.10.44:3306/spring-cloud-auth2-db?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+      username: dev
+      password: ***
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
   redis:
     host: 172.16.10.43
     database: 1
