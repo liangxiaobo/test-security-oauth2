@@ -1,3 +1,7 @@
+
+* **master分支是当前文章的项目**
+* **master-jdbc分支 是在master基础上以mysql数据库的实现**
+
 学习一下Spring Cloud OAuth2，我们分三个项目 eureka-server、service-auth、service-hi
 
  ![g9.png](https://upload-images.jianshu.io/upload_images/2151905-98b8ab75251c922d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
