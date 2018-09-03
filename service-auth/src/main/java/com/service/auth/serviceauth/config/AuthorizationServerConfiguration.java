@@ -1,6 +1,5 @@
 package com.service.auth.serviceauth.config;
 
-import com.service.auth.serviceauth.customImpl.MyRedisTokenStore;
 import com.service.auth.serviceauth.dto.UserServiceDetail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

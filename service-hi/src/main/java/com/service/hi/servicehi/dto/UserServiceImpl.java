@@ -8,18 +8,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    private static final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     private UserDao userDao;
 
     @Override
     public User create(String username, String password) {
-
-//        String hash = encoder.encode(password);
-//        user.setPassword(hash);
         User user = new User();
         user.setUsername(username);
+        password = "{bcrypt}" + passwordEncoder.encode(password);
         user.setPassword(password);
         User u = userDao.save(user);
         return u;
