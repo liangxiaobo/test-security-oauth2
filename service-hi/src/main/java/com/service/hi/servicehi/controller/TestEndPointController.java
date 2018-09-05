@@ -1,11 +1,15 @@
 package com.service.hi.servicehi.controller;
 
+import com.service.hi.servicehi.dto.UserDao;
+import com.service.hi.servicehi.dto.UserLoginDto;
 import com.service.hi.servicehi.dto.UserService;
 import com.service.hi.servicehi.entity.User;
+import com.service.hi.servicehi.utils.BPwdEncoderUtil;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,8 +26,16 @@ public class TestEndPointController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserDao userRepository;
+
     @GetMapping("/product/{id}")
     public String getProduct(@PathVariable String id) {
+
+        String dbpasswor = "$2a$10$HBX6q6TndkgMxhSEdoFqWOUtctaJEMoXe49NWh8Owc.4MTunv.wXa";
+
+        logger.info("判断两个密码是否相等 " + (BPwdEncoderUtil.matches("123456", dbpasswor)));
+
         return "product id : " + id;
     }
 
@@ -51,4 +63,12 @@ public class TestEndPointController {
 
         return null;
     }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+    @RequestMapping("/hello")
+    public String hello() {
+
+        return "hello you";
+    }
+
 }
