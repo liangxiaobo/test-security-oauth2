@@ -182,6 +182,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/oauth/**").permitAll();
     }
+  @Autowired
+    UserServiceDetail userServiceDetail;
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userServiceDetail).passwordEncoder(passwordEncoder());
+    }
 }
 ```
 service-auth项目完成了，其它内容和上一篇中的一样。
