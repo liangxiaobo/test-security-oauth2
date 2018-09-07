@@ -2,6 +2,9 @@
 * **master分支是当前文章的项目**
 * **master-jdbc分支 是在master基础上以mysql数据库的实现**
 
+> 二、[Spring Cloud OAuth2 token存数据库实现](https://www.jianshu.com/p/4ce5577bab74)
+三、[Spring Cloud Oauth2 JWT 实现](https://www.jianshu.com/p/402bda62a7c3)
+
 学习一下Spring Cloud OAuth2，我们分三个项目 eureka-server、service-auth、service-hi
 
  ![g9.png](https://upload-images.jianshu.io/upload_images/2151905-98b8ab75251c922d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -642,5 +645,4 @@ getPrinciple打印出验证信息 http://localhost:8765/getPrinciple ：
     "name": "user_1"
 }
 ```
-
 
