@@ -8,6 +8,6 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      serviceZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     fetch-registry: false
     register-with-eureka: false
