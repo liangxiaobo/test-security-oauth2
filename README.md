@@ -202,7 +202,7 @@ service-auth项目完成了，其它内容和上一篇中的一样。
 eureka:
   client:
     service-url:
-      serviceZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8765
 spring:
