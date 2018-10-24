@@ -36,7 +36,7 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      serviceZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     fetch-registry: false
     register-with-eureka: false
 ```
@@ -145,7 +145,7 @@ server:
 eureka:
   client:
     service-url:
-      serviceZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 ```
 application.yml中配置redis、注册中心
 接下来分别继承 **AuthorizationServerConfigurerAdapter**和**WebSecurityConfigurerAdapter**
@@ -374,7 +374,7 @@ public class ServiceAuthApplication {
 eureka:
   client:
     service-url:
-      serviceZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8765
 spring:
